@@ -1,6 +1,8 @@
 package com.example.flashcardapp
 
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,13 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        val flashcardquestion = findViewById<TextView>( R.id.flashcardquestion)
+        val flashcardanswer = findViewById<TextView>( R.id.flashcardanswer)
+        flashcardquestion.setOnClickListener{
+            flashcardquestion .visibility = View .INVISIBLE
+            flashcardanswer .visibility = View .VISIBLE
         }
     }
 }
