@@ -17,13 +17,18 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
         }
 
         val flashcardquestion = findViewById<TextView>( R.id.flashcardquestion)
         val flashcardanswer = findViewById<TextView>( R.id.flashcardanswer)
         flashcardquestion.setOnClickListener{
-            flashcardquestion .visibility = View .INVISIBLE
-            flashcardanswer .visibility = View .VISIBLE
+            flashcardquestion .visibility = View.INVISIBLE
+            flashcardanswer .visibility = View.VISIBLE
+        }
+        flashcardanswer.setOnClickListener{
+            flashcardanswer .visibility = View.INVISIBLE
+            flashcardquestion.visibility = View.VISIBLE
         }
     }
 }
